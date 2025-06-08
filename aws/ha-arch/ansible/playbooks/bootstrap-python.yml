@@ -1,0 +1,11 @@
+---
+- name: Instalar Python 3 en Amazon Linux 2023
+  hosts: web
+  gather_facts: false
+  connection: aws_ssm
+  become: true
+  become_method: sudo
+
+  tasks:
+    - name: Instalar Python 3
+      raw: dnf install -y python3
